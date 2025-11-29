@@ -1,0 +1,593 @@
+@charset "UTF-8";
+
+/* ===============================
+    common
+================================ */
+* {
+  box-sizing: border-box;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+:root {
+  --primary-pink-beige: #f1e8e5;
+  --primary-soft-beige: #fff3e9;
+  --primary-footer-beige: #e1c7bf;
+  --primary-red: #905151;
+  --primary-yellow: #ffbb2a;
+  --primary-white: #fff;
+  --primary-black: #3e3e3e;
+  --primary-gray: #b2b2b2;
+  --contentPadding: 8vw;
+  --font-sans: "Zen Kaku Gothic New", sans-serif;
+  --font-heading: "Zen Old Mincho", serif;
+}
+@media (max-width: 768px) {
+  :root {
+    --contentPadding: 2rem;
+  }
+}
+
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-sans);
+  font-size: 1.6rem;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 1.7;
+  color: var(--primary-black);
+  background-color: var(--primary-white);
+}
+
+.container {
+  padding: 0 var(--contentPadding);
+}
+
+h1 {
+  line-height: 1;
+}
+
+h3 {
+  font-size: clamp(1.6rem, 2.5vw, 2.2rem);
+  font-weight: 500;
+  line-height: 1.4;
+  color: var(--primary-red);
+}
+
+/* ========== section-title ========== */
+
+.section-title {
+  position: relative;
+  margin-top: 16rem;
+}
+
+.title-deco {
+  width: 30rem;
+  position: absolute;
+  left: 50%;
+  top: -4rem;
+  transform: translate(-50%, -50%);
+  z-index: 0;
+  pointer-events: none;
+}
+
+.therapist .title-deco {
+  width: 45rem;
+}
+
+.menu .title-deco {
+  top: -2rem;
+}
+
+.review .title-deco {
+  top: -3rem;
+}
+
+.blog .title-deco {
+  top: 0;
+}
+
+.access .title-deco {
+  top: -2rem;
+}
+
+.section-title h2 {
+  position: relative; /* stacking context を作る */
+  z-index: 1; /* デコ文字の上に出す */
+}
+
+h2 {
+  font-family: var(--font-heading);
+  text-align: center;
+  font-size: clamp(2.3rem, 5vw, 4rem);
+  font-weight: 400;
+  line-height: 1;
+}
+
+@media (max-width: 768px) {
+  .title-deco {
+    width: 20rem;
+  }
+  .therapist .title-deco {
+    width: 25rem;
+    top: -2rem;
+  }
+}
+
+/* ========== highlight========== */
+
+.underline {
+  background: linear-gradient(transparent 70%, var(--primary-footer-beige) 50%);
+}
+
+/* ========== 背景共通波形========== */
+
+.curve {
+  position: relative;
+  z-index: 1;
+  background: linear-gradient(
+      to bottom,
+      rgba(255, 255, 255, 1) 15%,
+      /* 15%位置で白100%透明度 */ rgba(255, 255, 255, 0.5) 35%,
+      /* 35%位置で白50%透明度 */ rgba(255, 255, 255, 0) 100%
+        /* 100%位置で白0%透明度 */
+    ),
+    url("../images/curve.svg") bottom center no-repeat, #f1e8e5; /* ベースカラー */
+  background-size: auto, 100%;
+  padding-bottom: 16rem;
+}
+@media (max-width: 768px) {
+  .curve {
+    padding-bottom: 8rem;
+  }
+}
+
+/* ===============================
+    header
+================================ */
+
+.header {
+  height: 7rem;
+  background: var(--primary-white);
+  width: 100%;
+  /* max-width: 1440px; */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 3vw;
+  z-index: 1000;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+/* 上部固定 */
+.header.fixed {
+  position: fixed;
+  top: 0;
+  left: 0;
+  box-shadow: 0 2px 2px rgba(104, 66, 30, 0.1);
+}
+#salon,
+#access {
+  scroll-margin-top: 265px;
+}
+
+
+.header__left {
+  display: flex;
+  gap: 3.8rem;
+  align-items: center;
+}
+
+.nav__list {
+  display: flex;
+  align-items: center;
+  gap: clamp(1rem, 3vw, 3.8rem);
+  white-space: nowrap;
+}
+.nav__list a {
+  transition: color 0.3s ease;
+}
+
+.nav__list a:hover,
+.nav__sns a:hover i {
+  color: var(--primary-red);
+}
+
+.site-logo {
+  width: 5.5rem;
+  aspect-ratio: 1 / 1;
+  height: auto;
+  object-fit: contain;
+  display: block;
+  max-width: 100%;
+}
+.nav__item {
+  font-size: clamp(1.1rem, 1.4vw, 1.4rem);
+}
+
+/* 装飾縦線 */
+.nav__item:nth-child(5) {
+  position: relative;
+  padding-right: 4rem;
+}
+
+.nav__item:nth-child(5)::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 1px;
+  height: 3rem;
+  background-color: var(--primary-gray);
+}
+
+.nav__time {
+  font-size: 1.2rem;
+}
+
+.header__right {
+  display: flex;
+  align-items: center;
+  gap: 2.3rem;
+}
+
+.nav__sns i {
+  font-size: 29px;
+  width: 29px;
+  height: 29px;
+  display: inline-block;
+  text-align: center;
+}
+
+.btn-reserve {
+  border-radius: 8rem;
+  padding: 1rem 2.5rem;
+  font-size: 1.6rem;
+  font-weight: 500;
+  line-height: 1;
+}
+.btn-reserve:hover {
+  opacity: 0.85;
+}
+
+.btn-web {
+  border: 2px solid var(--primary-red);
+  background-color: var(--primary-white);
+  color: var(--primary-red);
+}
+
+.btn-line {
+  border: 2px solid var(--primary-red);
+  background-color: var(--primary-red);
+  color: var(--primary-white);
+}
+
+/*  モバイル   */
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  align-items: center;
+  cursor: pointer;
+}
+
+.hamburger span {
+  width: 24px;
+  height: 1px;
+  background: var(--primary-black);
+}
+
+.mobile__nav {
+  display: none;
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 80vw;
+  height: 100vh;
+  background: rgba(255, 255, 255, 0.95);
+  justify-content: space-between;
+  align-items: left;
+  flex-direction: column;
+  z-index: 1001;
+}
+
+.mobile__nav-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2.8rem;
+  padding: 8rem 0 0 4rem;
+}
+
+.mobile__nav-item {
+  font-size: 1.8rem;
+}
+
+.mobile__close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 0;
+  z-index: 1100;
+}
+
+.mobile__close span {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 24px;
+  height: 1px;
+  background-color: var(--primary-black);
+  border-radius: 1px;
+  transform-origin: center;
+}
+
+.mobile__close span:nth-child(1) {
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.mobile__close span:nth-child(2) {
+  transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+.mobile__nav-info {
+  padding: 4rem;
+  font-size: 1.4rem;
+}
+
+.mobile__nav-info li {
+  list-style: none;
+}
+
+.mobile__nav-info .btn-reserve {
+  display: block;
+  margin: 1.5rem auto 0;
+  text-align: center;
+  max-width: 50rem;
+}
+
+.mobile__nav-info .nav__sns {
+  margin-top: 1.5rem;
+}
+
+.curve-spmenu {
+  background: url("../images/curve-menu-nursery.svg") top center no-repeat,
+    #f1e8e5;
+  background-size: 100% auto, cover;
+  background-repeat: no-repeat;
+  padding-top: 7rem;
+}
+
+@media (max-width: 1325px) {
+  .nav__time {
+    display: none;
+  }
+}
+
+@media (max-width: 1100px) {
+  .nav {
+    background: none;
+  }
+  .nav__list {
+    display: none;
+  }
+
+  .header__right {
+    display: none;
+  }
+
+  .hamburger {
+    display: flex;
+    z-index: 1000;
+  }
+
+  .mobile__nav.active {
+    display: flex;
+  }
+}
+
+/* ===============================
+    footer
+================================ */
+
+/* ========== reservation ========== */
+
+.reservation {
+  text-align: center; /* テキスト中央揃え */
+  background: url("../images/curve-3.svg") top center no-repeat, #fff3e9;
+  background-size: 100% auto, cover;
+  background-repeat: no-repeat;
+  padding: 16rem var(--contentPadding) 8rem;
+}
+/* メニューページの予約の上の波　背景ベージュ */
+.page-menu .reservation {
+  background-image: url("../images/curve-menu-reserve.svg");
+}
+
+/* 上の説明文 */
+.reservation-text {
+  font-size: clamp(1.8rem, 2.4vw, 2.4rem);
+}
+.reservation-text .brsp {
+  display: none;
+}
+
+/* ボタン全体の配置 */
+.reservation-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 11rem;
+  margin-top: 4.3rem;
+}
+
+/* ボタン共通デザイン */
+.reservation-btn {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 30.5rem;
+  height: 6.5rem;
+  font-size: clamp(1.8rem, 4vw, 2.4rem);
+  border-radius: 8rem;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+/* WEB予約ボタン（例：淡い色） */
+.reservation-btn.web {
+  background-color: var(--primary-white);
+  color: var(--primary-red);
+  border: 2px solid var(--primary-red);
+}
+
+/* LINE予約ボタン（例：LINEグリーン） */
+.reservation-btn.line {
+  background-color: var(--primary-red);
+  color: var(--primary-white);
+}
+
+/* ホバー効果 */
+.reservation-btn:hover {
+  opacity: 0.85;
+}
+
+@media (max-width: 768px) {
+  .reservation {
+    padding: 12rem var(--contentPadding) 8rem;
+  }
+  .reservation-buttons {
+    gap: 3rem;
+  }
+  .reservation-btn {
+    height: 5rem;
+  }
+}
+@media (max-width: 480px) {
+  .reservation-text .brsp {
+    display: block;
+  }
+}
+/* ========== footer ========== */
+
+.footer-nav {
+  background-color: var(--primary-footer-beige);
+  padding: 4.6rem var(--contentPadding) 2.3rem;
+  text-align: center;
+}
+
+.footer-nav__list {
+  display: inline-flex; /* 中身の幅に合わせる */
+  gap: 4.2rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.footer-nav__item a {
+  font-size: clamp(1.4rem, 2vw, 1.6rem);
+}
+
+.footer__copyright {
+  margin-top: 3rem;
+}
+
+.page-top-btn {
+  position: fixed;
+  right: 2rem;
+  bottom: 2rem;
+  width: 53px;
+  height: 53px;
+  background-color: #fffcfc;
+  border: 1px solid var(--primary-footer-beige);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  z-index: 9999;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.page-top-arrow {
+  position: relative;
+  display: inline-block;
+  width: 20.4px;
+  height: 11.2px;
+}
+
+.page-top-arrow::before,
+.page-top-arrow::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: calc(50% - 1px);
+  width: 2px;
+  height: 15px;
+  border-radius: 9999px;
+  background-color: var(--primary-footer-beige);
+  transform-origin: 50% 1px;
+}
+
+.page-top-arrow::before {
+  transform: rotate(45deg);
+}
+
+.page-top-arrow::after {
+  transform: rotate(-45deg);
+}
+
+.page-top-btn:hover {
+  background-color: var(--primary-footer-beige);
+}
+.page-top-btn:hover .page-top-arrow::before,
+.page-top-btn:hover .page-top-arrow::after {
+  background-color: var(--primary-white);
+}
+
+.page-top-btn.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* スマホ対応：位置少し小さめに */
+@media (max-width: 768px) {
+  .footer-nav__list {
+    /* gap: 2.8rem; */
+    column-gap: 2.8rem;
+    row-gap: 1.2rem;
+  }
+
+  .page-top-btn {
+    right: 1.5rem;
+    bottom: 1.5rem;
+    width: 48px;
+    height: 48px;
+  }
+
+  .page-top-btn::before,
+  .page-top-btn::after {
+    width: 14px;
+    height: 2px;
+    left: 16px;
+    bottom: 16px;
+  }
+  .footer-nav .nav__sns i {
+  font-size: 26px;
+  width: 26px;
+  height: 26px;
+}
+}

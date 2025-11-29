@@ -1,0 +1,239 @@
+/* ========== common(blog) ========== */
+.menu-mv .title-deco {
+  width: 28rem;
+}
+.title-deco {
+  top: 0;
+}
+
+.reservation {
+  margin-top: 16rem;
+}
+
+.page-blog h3{
+  color: var(--primary-black);
+}
+
+@media (max-width: 768px) {
+  .menu-mv .title-deco {
+    width: 16rem;
+  }
+}
+/* ========== menu-mv(blog) ========== */
+
+.page-blog .menu-mv {
+  width: 100vw;
+  height: 65dvh;
+  padding-top: 4rem;
+  background-color: var(--primary-pink-beige);
+  position: relative;
+}
+
+.menu-mv__subtitle {
+  text-align: center;
+  color: var(--primary-red);
+  font-size: clamp(1.4rem, 2vw, 2rem);
+  font-weight: 500;
+  line-height: 1.9;
+  margin-top: 2rem;
+  position: relative;
+  z-index: 1;
+}
+.page-blog .wave {
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+}
+@media (max-width: 768px) {
+  .page-blog .menu-mv {
+    padding-top: 1rem;
+    height: 50dvh;
+  }
+  .menu-mv__subtitle {
+    line-height: 1.5;
+  }
+}
+/* ========== articles ========== */
+
+.category {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 3rem;
+  margin: 16rem 0;
+  font-size: clamp(1.2rem, 3vw, 1.6rem);
+}
+
+.category-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 7rem;
+  border-radius: 8rem;
+  background-color: var(--primary-pink-beige);
+  transition: transform 0.3s;
+}
+
+.category-button.active {
+  background-color: var(--primary-red);
+  color: var(--primary-white);
+}
+
+
+.category-button:hover {
+  opacity: 0.85;
+}
+
+.articles {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 4rem;
+}
+
+.article {
+  height: 42rem;
+  border-radius: 2rem;
+  background-color: var(--primary-white);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.1);
+}
+
+.thumbnail {
+  height: 50%;
+}
+
+.thumbnail img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.info {
+  height: 50%;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.meta {
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  font-size: clamp(1.2rem, 2.5vw, 1.4rem);
+}
+
+.meta-category {
+  background-color: var(--primary-pink-beige);
+  padding: 0.4rem 1.2rem;
+  border-radius: 8rem;
+  width: fit-content;
+}
+
+.date{
+  margin-top: 0.5rem;
+}
+
+.title {
+  margin-top: 2rem;
+  font-size: clamp(1.4rem, 4vw, 1.8rem);
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 4;       /* 最大2行まで表示 */
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+@media (max-width: 768px) {
+  .category {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    margin: 8rem 0;
+  }
+  .category-button {
+  height: 5rem;
+}
+
+  .articles {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+}
+/* ========== pagination ========== */
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  margin-top: 4rem;
+}
+
+.pagination li a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 4rem;
+  height: 4rem;
+  border: 1px solid var(--primary-red);
+  border-radius: 50%;
+  transition: 0.2s;
+}
+
+.pagination li a:hover {
+  background-color: var(--primary-red);
+  color: var(--primary-white);
+}
+
+.pagination li.current a {
+  background-color: var(--primary-red);
+  color: var(--primary-white);
+  pointer-events: none; /* 現在ページはクリック不可 */
+}
+
+.pagination li.prev a,
+.pagination li.next a {
+  width: 3rem;
+  height: 3rem;
+}
+/* prev & next 共通：中央配置 */
+.pagination li.prev a,
+.pagination li.next a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* 左矢印 */
+.pagination li.prev a::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-left: 1px solid var(--primary-black);
+  border-bottom: 1px solid var(--primary-black);
+  transform: rotate(45deg);
+  margin-left: 2px;
+}
+
+/* 右矢印 */
+.pagination li.next a::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-right: 1px solid var(--primary-black);
+  border-bottom: 1px solid var(--primary-black);
+  transform: rotate(-45deg);
+  margin-right: 2px;
+}
+
+/* hover 時の色反転 */
+.pagination li.prev a:hover::before,
+.pagination li.next a:hover::before {
+  border-color: var(--primary-white);
+}
+
+
+
+
