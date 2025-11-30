@@ -1,0 +1,782 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="妊娠中～産後、そして全ての女性に寄り添う整体サロンです。"
+    />
+    <!-- ogp -->
+    <!-- <meta property="og:url" content="https://example.com/" /> -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="晴レ" />
+    <meta
+      property="og:description"
+      content="妊娠中～産後、そして全ての女性に寄り添う整体サロンです。"
+    />
+    <meta property="og:site_name" content="晴レ" />
+    <!-- <meta property="og:image" content="" /> -->
+    <!-- favicon apple-touch-icon -->
+    <!-- <link rel="shortcut icon" href="" /> -->
+    <!-- <link rel="apple-touch-icon" sizes="180x180" href="" /> -->
+    <!-- <link rel="icon" type="image/png" href="" /> -->
+
+    <title>晴レ</title>
+
+    <!-- web font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@400;500&family=Zen+Old+Mincho&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- FontAwesome CDN -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <!-- AOS -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <!-- swiper -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css"
+    />
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
+    <!-- css -->
+    <link rel="stylesheet" href="assets/css/destyle.css" />
+    <link rel="stylesheet" href="assets/css/common.css" />
+    <link rel="stylesheet" href="assets/css/top.css" />
+    <!-- js -->
+    <script src="assets/js/main.js" defer></script>
+    <script src="assets/js/common.js" defer></script>
+  </head>
+
+  <body>
+    <div id="header"></div>
+    <div class="wrapper">
+      <section class="mv">
+        <img
+          src="assets/images/circle-1.svg"
+          alt="円形グラデ"
+          class="circle-svg"
+        />
+        <div class="mv__backgrounds">
+          <picture>
+            <source
+              srcset="assets/images/mv-1-sp.jpg"
+              media="(max-width: 768px)"
+            />
+            <img
+              src="assets/images/mv-1.png"
+              class="mv__bg active"
+              alt="背景画像1"
+            />
+          </picture>
+
+          <picture>
+            <source
+              srcset="assets/images/mv-2-sp.jpg"
+              media="(max-width: 768px)"
+            />
+            <img src="assets/images/mv-2.jpg" class="mv__bg" alt="背景画像2" />
+          </picture>
+
+          <picture>
+            <source
+              srcset="assets/images/mv-3-sp.jpg"
+              media="(max-width: 768px)"
+            />
+            <img src="assets/images/mv-3.jpg" class="mv__bg" alt="背景画像3" />
+          </picture>
+          <div class="wave">
+            <canvas id="waveCanvas"></canvas>
+          </div>
+        </div>
+
+        <div class="mv__inner">
+          <div class="mv__inner-top">
+            <picture>
+              <!-- スマホ用（768px 以下） -->
+              <source
+                srcset="assets/images/logo-sp.png"
+                media="(max-width: 768px)"
+              />
+
+              <!-- PC用（通常） -->
+              <img
+                src="assets/images/logo.png"
+                class="site-logo"
+                alt="晴レ"
+                data-aos="fade"
+                data-aos-duration="2000"
+                data-aos-delay="0"
+              />
+            </picture>
+
+            <p
+              class="mv__title"
+              data-aos="fade"
+              data-aos-duration="2000"
+              data-aos-delay="0"
+            >
+              女性のためのケアサロン<br /><span class="mv__title--main"
+                >晴レ</span
+              >
+            </p>
+          </div>
+          <p
+            class="mv__subtitle"
+            data-aos="fade"
+            data-aos-duration="2000"
+            data-aos-delay="400"
+          >
+            カラダを整え<br />
+            心の余白をつくる<br />
+            <span class="mv__subtitle--sub"
+              >理学療法に基づいた根拠あるケア</span
+            >
+          </p>
+        </div>
+      </section>
+
+      <main>
+        <section id="concept" class="concept">
+          <div class="concept-inner">
+            <div class="concept__left">
+              <img
+                src="assets/images/concept-1.jpg"
+                alt="サロンの写真"
+                class="concept__img1"
+                data-aos="fade-up"
+                data-aos-delay="0"
+                data-aos-duration="2000"
+                data-aos-offset="0"
+                data-aos-anchor-placement="top-bottom"
+              />
+              <img
+                src="assets/images/concept-2.jpg"
+                alt="サロンの写真"
+                class="concept__img2"
+                data-aos="fade-up"
+                data-aos-delay="200"
+                data-aos-offset="0"
+                data-aos-duration="2000"
+                data-aos-anchor-placement="top-bottom"
+              />
+              <div class="circle-wrapper">
+                <img
+                  src="assets/images/circle-2.svg"
+                  alt="円形グラデ"
+                  class="circle-svg"
+                />
+              </div>
+            </div>
+            <div class="concept__right">
+              <p
+                class="concept__right1"
+                data-aos="fade"
+                data-aos-duration="2000"
+                data-aos-delay="0"
+              >
+                ママの笑顔は、家族にとって太陽のような存在。<br />
+                そんなママの笑顔が増えて、<br />
+                お家の中が明るく晴れ渡るように——。<br />
+                「晴レ」には、そんな想いを込めています。
+              </p>
+              <p
+                class="concept__right2"
+                data-aos="fade"
+                data-aos-duration="2000"
+                data-aos-delay="0"
+              >
+                サロンで過ごした“自分のための時間”のひとときが、<br />あなたの心を満たし、明日への活力につながりますように。
+              </p>
+              <div class="circle-wrapper">
+                <img
+                  src="assets/images/circle-3.svg"
+                  alt="円形グラデ"
+                  class="circle-svg"
+                />
+              </div>
+            </div>
+          </div>
+        </section>
+        <section id="salon" class="salon container curve">
+          <div class="section-title">
+            <img
+              class="title-deco"
+              src="/assets/images/title-deco/salon.svg"
+              alt=""
+              aria-hidden="true"
+            />
+            <h2>サロンの特徴</h2>
+          </div>
+          <ul class="salon__list">
+            <li class="salon__item">
+              <img src="assets/images/salon-1.jpg" alt="サロンの写真" />
+              <div class="salon__txt">
+                <h3>お子様と一緒に行ける<br />「安心託児サービス」</h3>
+                <p>
+                  子連れのお客様のために、<span class="underline"
+                    >子育て経験豊富な託児スタッフによる託児サービス</span
+                  >をご用意しています。ベビーグッズやおもちゃもあり、託児スタッフに赤ちゃんを預けて安心して施術を受けられます。
+                  予約の際に託児枠をお選びいただけます。
+                </p>
+              </div>
+            </li>
+            <li class="salon__item">
+              <img src="assets/images/salon-2.jpg" alt="サロンの写真" />
+              <div class="salon__txt">
+                <h3>理学療法士による<br class="brsp" />根拠ある施術</h3>
+                <p>
+                  体の構造や動きを専門的に理解した国家資格「理学療法士」を持つサロンオーナーが、根拠に基づいた施術を行います。
+                  産前産後の体に合わせて筋膜へやさしくアプローチし、症状を和らげるだけでなく、<span
+                    class="underline"
+                    >不調の根本原因まで見極めてケア</span
+                  >します。
+                </p>
+              </div>
+            </li>
+            <li class="salon__item">
+              <img src="assets/images/salon-3.jpg" alt="サロンの写真" />
+              <div class="salon__txt">
+                <h3>一人ひとりに<br class="brsp" />合わせたケア</h3>
+                <p>
+                  姿勢や筋肉を丁寧にチェックし、一人ひとりの体の状態に合わせて必要な部位を重点的にケアします。施術後には、<span
+                    class="underline"
+                    >一人ひとりに合ったセルフケア</span
+                  >をお伝えし、日常でも心地よい体づくりをサポートします。
+                </p>
+              </div>
+            </li>
+          </ul>
+        </section>
+
+        <section class="therapist">
+          <div class="section-title">
+            <img
+              class="title-deco"
+              src="/assets/images/title-deco/therapist.svg"
+              alt=""
+              aria-hidden="true"
+            />
+            <h2>セラピスト</h2>
+          </div>
+          <div class="therapist__subTitle">
+            <p class="therapist__role">セラピスト / サロンオーナー</p>
+            <p class="therapist__name--jp">日下 千春</p>
+            <p class="therapist__name--kana">くさか ちはる</p>
+          </div>
+          <div class="therapist__wrapper container">
+            <div class="therapist__left">
+              <img
+                src="assets/images/therapist.jpg"
+                alt="セラピストの写真"
+                class="therapist-img"
+              />
+              <img
+                src="assets/images/circle-1.svg"
+                alt="円形グラデ"
+                class="circle-svg"
+              />
+            </div>
+
+            <div class="therapist__right">
+              <div class="therapist__bio">
+                <p class="therapist__qualification">
+                  <i class="fa-solid fa-caret-right"></i>理学療法士の資格保有
+                </p>
+                <p class="therapist__qualification">
+                  <i class="fa-solid fa-caret-right"></i>３姉妹の子育て中
+                </p>
+
+                <span class="therapist__profile">
+                  <i class="fa-solid fa-cake-candles"></i>1992年3月生まれ
+                </span>
+                <span class="therapist__profile">
+                  <i class="fa-solid fa-location-dot"></i>島根県松江市出身
+                </span>
+                <span class="therapist__profile">
+                  <i class="fa-solid fa-volleyball"></i>小3～高3 バレーボール部
+                </span>
+
+                <p class="therapist__message">
+                  妊娠・出産をきっかけに、腰痛や尿もれなど体の不調、そして心の不調を経験しました。<br />
+                  同じように悩む方の力になりたい、そしてママたちに自分を大切にしてほしい。<br />
+                  そんな想いで活動しています。
+                </p>
+              </div>
+              <div class="timeline">
+                <div class="timeline-left">
+                  <div class="timeline-item">
+                    <div class="timeline-year">2014</div>
+                    <div class="timeline-dot"><span></span></div>
+                    <div class="timeline-content">理学療法士&emsp;資格取得</div>
+                  </div>
+                  <div class="timeline-item">
+                    <div class="timeline-year">2020</div>
+                    <div class="timeline-dot"><span></span></div>
+                    <div class="timeline-content">
+                      機能的骨盤底筋エクササイズ<br />
+                      「Pfilates」インストラクター取得
+                    </div>
+                  </div>
+                  <div class="timeline-item">
+                    <div class="timeline-year">2022</div>
+                    <div class="timeline-dot"><span></span></div>
+                    <div class="timeline-content">
+                      PHIピラティスインストラクター<br />
+                      (マットⅠ＆Ⅱ) 取得
+                    </div>
+                  </div>
+                  <div class="timeline-item">
+                    <div class="timeline-year">2024</div>
+                    <div class="timeline-dot"><span></span></div>
+                    <div class="timeline-content">
+                      女性のためのケアサロン 晴レ open
+                    </div>
+                  </div>
+                </div>
+                <div class="timeline-right">
+                  <div class="timeline-item">
+                    <div class="timeline-content">
+                      リハビリ専門の病院勤務<br />（３回の産休育休取得）
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="concern">
+          <div class="concern-title">
+            <span class="concern-title__top">こんなお悩み</span
+            ><span>ありませんか？</span>
+          </div>
+          <div class="concern-content container">
+            <div class="concern-content__left">
+              <p><i class="fa-solid fa-check"></i>肩こりがつらい</p>
+              <p><i class="fa-solid fa-check"></i>猫背が気になる</p>
+              <p><i class="fa-solid fa-check"></i>下腹ぽっこりが治らない</p>
+              <p><i class="fa-solid fa-check"></i>全身が疲れている感じ</p>
+            </div>
+            <div class="concern-content__right">
+              <p><i class="fa-solid fa-check"></i>妊娠中に腰が痛い</p>
+              <p><i class="fa-solid fa-check"></i>産後に骨盤矯正をせず不安</p>
+              <p><i class="fa-solid fa-check"></i>産後くびれがなくなった</p>
+              <p><i class="fa-solid fa-check"></i>産後の尿もれがこわい</p>
+            </div>
+          </div>
+        </section>
+
+        <section id="menu" class="menu container curve">
+          <div class="section-title">
+            <img
+              class="title-deco"
+              src="/assets/images/title-deco/menu.svg"
+              alt=""
+              aria-hidden="true"
+            />
+            <h2>メニュー</h2>
+          </div>
+          <div class="menu-title">
+            <p class="menu-title__top">がんばるママの不調を、整える。</p>
+            <p class="menu-title__sub">
+              筋膜へ穏やかにアプローチし、<br
+                class="brsp"
+              />心地よいケアでやさしく整えます。
+            </p>
+          </div>
+          <ul class="menu__list">
+            <li class="menu__item">
+              <div class="menu__top">
+                <img src="assets/images/menu-1.jpg" alt="サロンの画像" />
+              </div>
+              <div class="menu__txt">
+                <h3>整体</h3>
+                <p>
+                  ゴリゴリバキバキしない整体です。指先で丁寧に筋肉をゆるめ、ゆがみやこわばりを調整します。
+                </p>
+              </div>
+            </li>
+            <li class="menu__item menu__item--2">
+              <div class="menu__top">
+                <img src="assets/images/menu-2.jpg" alt="サロンの画像" />
+              </div>
+              <div class="menu__txt">
+                <h3>アロマ筋膜<br class="menu-br" />トリートメント</h3>
+                <p>
+                  お好きな精油でオリジナルの香りをブレンド。
+                  ほどよい圧で背中〜足〜お腹〜デコルテを丁寧にゆるめます。
+                </p>
+              </div>
+            </li>
+            <li class="menu__item">
+              <div class="menu__top">
+                <img src="assets/images/menu-3.jpg" alt="サロンの画像" />
+              </div>
+              <div class="menu__txt">
+                <h3>
+                  ととのう<br class="menu-br first" />
+                  全身アロマ<br class="menu-br" />トリートメント
+                </h3>
+                <p>
+                  お好きな精油でオリジナルの香りをブレンド。
+                  頭から手足の先まで丁寧にゆるめていく全身ケア120分です。
+                </p>
+              </div>
+            </li>
+            <li class="menu__item menu__item--2">
+              <div class="menu__top">
+                <img src="assets/images/menu-4.jpg" alt="サロンの画像" />
+              </div>
+              <div class="menu__txt">
+                <h3>尿もれ改善<br class="menu-br" />3ヶ月コース</h3>
+                <p>
+                  尿もれを何とかしたい。誰にも言えなかったけどずっと悩んでいた。
+                  そんな方にオススメの特別メニューです。
+                </p>
+              </div>
+            </li>
+            <li class="menu__item">
+              <div class="menu__top">
+                <img src="assets/images/menu-5.jpg" alt="サロンの画像" />
+              </div>
+              <div class="menu__txt">
+                <h3>ピラティス</h3>
+                <p>
+                  産後のカラダを整えるために、一人ひとりに合わせたオリジナルプログラムで行うマットピラティスです。
+                </p>
+              </div>
+            </li>
+          </ul>
+          <div class="button-wrapper">
+            <a href="menu.html" class="more-btn">
+              <span class="more-text">more</span>
+              <span class="arrow"></span>
+            </a>
+          </div>
+        </section>
+        <section class="review">
+          <div class="section-title">
+            <img
+              class="title-deco"
+              src="/assets/images/title-deco/review.svg"
+              alt=""
+              aria-hidden="true"
+            />
+            <h2>選ばれる理由</h2>
+          </div>
+          <p class="review-title__sub">たくさんの喜びの声をいただいています</p>
+          <div class="btn-wrapper">
+            <a
+              href="https://goo.gl/maps/xxxx"
+              target="_blank"
+              class="google-map-btn"
+            >
+              <img
+                src="assets/images/Maps_Pin_FullColor.png"
+                alt="Map Pin"
+                class="map-pin"
+              />
+              <img
+                src="assets/images/lockup_Google_Maps.png"
+                alt="Google Maps"
+                class="google-lockup"
+              />
+              <div class="stars">
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+              </div>
+            </a>
+          </div>
+          <!-- Slider main container -->
+          <div class="swiper review-slider">
+            <!-- Additional required wrapper -->
+            <div class="swiper-wrapper">
+              <!-- Slides -->
+              <div class="swiper-slide">
+                <div class="review__item">
+                  <h3>アロマの香りで心も体も軽くなる</h3>
+                  <p>
+                    最初にアロマを選ぶ際、今の状態や効能がズバリ当たっていて、自分が選んだ香りに対する直感力の面白さを感じました。
+                    アロマの香りと全身をトリートメントしていただける気持ちよさに浸って、施術前と後では気持ちはもちろん身体もリラックスして軽くなったのを実感できました。
+                  </p>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="review__item">
+                  <h3>姿勢改善</h3>
+                  <p>
+                    背中と肩に施術していただいたところ、丸まっていた背筋が伸び、バストラインも上がっているのが前後の写真で確認できて驚きました。
+                    呼吸がラクになり、肺に空気がたくさん入ってくるような感覚があり、普段は猫背で深く呼吸ができていなかったのだと思うと改めて驚きました。
+                  </p>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="review__item">
+                  <h3>託児の安心感</h3>
+                  <p>
+                    産後4ヶ月で、託児付き整体を利用しました。
+                    託児スタッフの方がとても素敵で、同じ空間で見てもらえるので安心して施術を受けることができました。途中で子どもが泣いてしまったのですが、授乳の時間もとっていただき、とてもありがたかったです。
+                  </p>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="review__item">
+                  <h3>アットホームで通いやすい</h3>
+                  <p>
+                    産後2ヶ月から通っていますが、アットホームな雰囲気でいつもリラックスして通えます。
+                    ゆったりとしていてエステのようでもあり、これまでの整体のイメージと良い意味で違う時間を過ごせるお店だと感じました。
+                    これからもお願いしたいと思っています。
+                  </p>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="review__item">
+                  <h3>丁寧なカウンセリング</h3>
+                  <p>
+                    事前のカウンセリングでは産後の腰痛・肩こり・股関節の痛み・頭痛など、気になるところをしっかりお話を聞いてくださり、丁寧に施術していただきました。
+                    呼吸法や股関節の痛みのストレッチ、自宅でできるエクササイズも教わり、少しずつ続けていけたらと思っています。
+                  </p>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="review__item">
+                  <h3>優しい施術</h3>
+                  <p>
+                    グリグリ、ゴリゴリするのではなく、ゆっくりぐーっとポイントを指で押し込むように丁寧にほぐしてくれます。
+                    優しい施術ですが、施術後はスッキリ、体が軽くてびっくりしました。1回の施術でかなり改善し、効果に驚いています。
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- If we need navigation buttons -->
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+          </div>
+
+          <div class="arrow-container">
+            <div class="arrow-inner">
+              <button class="arrow-btn prev" aria-label="previous"></button>
+              <button class="arrow-btn next" aria-label="next"></button>
+            </div>
+          </div>
+        </section>
+        <section id="blog" class="blog container">
+          <div class="section-title">
+            <img
+              class="title-deco"
+              src="/assets/images/title-deco/blog.svg"
+              alt=""
+              aria-hidden="true"
+            />
+            <h2>ブログ</h2>
+          </div>
+          <p class="blog-sub">
+            女性のカラダに関することや、妊娠中・産後<br
+              class="brsp"
+            />のママに役立つ情報を発信しています。
+          </p>
+          <p class="blog-pickup">注目記事</p>
+          <div class="blog-list">
+            <div class="blog-content">
+              <div class="blog-content__img">
+                <img src="assets/images/blog-1.jpg" alt="ブログサムネイル" />
+              </div>
+              <div class="blog-content__text">
+                <div class="blog-title">産後の尿もれケア、やってます。</div>
+                <div class="blog-category">尿漏れ</div>
+              </div>
+            </div>
+            <div class="blog-content">
+              <div class="blog-content__img">
+                <img src="assets/images/blog-2.jpg" alt="ブログサムネイル" />
+              </div>
+              <div class="blog-content__text">
+                <div class="blog-title">
+                  妊娠中・産後すぐから受けられる【整体】
+                </div>
+                <div class="blog-category">サロンのこと</div>
+              </div>
+            </div>
+            <div class="blog-content">
+              <div class="blog-content__img">
+                <img src="assets/images/blog-3.jpg" alt="ブログサムネイル" />
+              </div>
+              <div class="blog-content__text">
+                <div class="blog-title">【整体】で姿勢が変わる！！</div>
+                <div class="blog-category">産後のカラダ</div>
+              </div>
+            </div>
+            <div class="blog-content">
+              <div class="blog-content__img">
+                <img src="assets/images/blog-4.jpg" alt="ブログサムネイル" />
+              </div>
+              <div class="blog-content__text">
+                <div class="blog-title">
+                  【アロマ筋膜トリートメント】について
+                </div>
+                <div class="blog-category">アロマ筋膜トリートメント</div>
+              </div>
+            </div>
+            <div class="blog-content">
+              <div class="blog-content__img">
+                <img src="assets/images/blog-5.jpg" alt="ブログサムネイル" />
+              </div>
+              <div class="blog-content__text">
+                <div class="blog-title">
+                  これだけはおさえておきたい！骨盤ベルトの装着方法
+                </div>
+                <div class="blog-category">産後のカラダ</div>
+              </div>
+            </div>
+            <div class="blog-content">
+              <div class="blog-content__img">
+                <img src="assets/images/blog-6.jpg" alt="ブログサムネイル" />
+              </div>
+              <div class="blog-content__text">
+                <div class="blog-title">
+                  産後骨盤矯正って産後6ヵ月過ぎたら意味ない ٠٠٠？
+                </div>
+                <div class="blog-category">産後のカラダ</div>
+              </div>
+            </div>
+          </div>
+          <div class="button-wrapper">
+            <a href="blog.html" class="more-btn">
+              <span class="more-text">more</span>
+              <span class="arrow"></span>
+            </a>
+          </div>
+        </section>
+        <section id="faq" class="faq container">
+          <a href="question.html" class="faq-link">
+            <p class="faq-lead">
+              サロンのことや施術について<br class="brsp" />お答えしています
+            </p>
+            <p class="faq-main">
+              よくあるご質問はこちら<span class="faq-arrow"></span>
+            </p>
+          </a>
+        </section>
+        <div class="image-carousel">
+          <div class="carousel-inner">
+            <img src="assets/images/carousel-1.png" alt="サロンの写真" />
+            <img src="assets/images/carousel-2.png" alt="サロンの写真" />
+            <img src="assets/images/carousel-3.png" alt="サロンの写真" />
+            <img src="assets/images/carousel-4.png" alt="サロンの写真" />
+            <img src="assets/images/carousel-5.png" alt="サロンの写真" />
+            <img src="assets/images/carousel-6.png" alt="サロンの写真" />
+            <!-- 複製 -->
+            <img src="assets/images/carousel-1.png" alt="サロンの写真" />
+            <img src="assets/images/carousel-2.png" alt="サロンの写真" />
+            <img src="assets/images/carousel-3.png" alt="サロンの写真" />
+            <img src="assets/images/carousel-4.png" alt="サロンの写真" />
+            <img src="assets/images/carousel-5.png" alt="サロンの写真" />
+            <img src="assets/images/carousel-6.png" alt="サロンの写真" />
+          </div>
+        </div>
+
+        <section id="access" class="access container">
+          <div class="section-title">
+            <img
+              class="title-deco"
+              src="/assets/images/title-deco/access.svg"
+              alt=""
+              aria-hidden="true"
+            />
+            <h2>アクセス</h2>
+          </div>
+          <div class="access-intro">
+            <p class="access-name">女性のためのケアサロン&emsp;晴レ</p>
+            <p class="access-desc">
+              一軒家なので、まわりを気にせず<br
+                class="brsp"
+              />ゆっくりお過ごしいただけます。
+            </p>
+          </div>
+          <div class="access-map-wrapper">
+            <img
+              class="access-image"
+              src="assets/images/exterior.jpg"
+              alt="店の外観"
+            />
+            <iframe
+              class="access-iframe"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3953.563120407862!2d132.3859811920088!3d34.43813233950817!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x355a97718776b6fb%3A0xdeaae96e7174fca5!2z5aWz5oCn44Gu44Gf44KB44Gu44Kx44Ki44K144Ot44Oz44O85pm044Os44O8W-W6g-WztuW4gi_kvZDkvK_ljLov5a6J5L2Q5Y2X5Yy644O75pW05L2TXQ!5e0!3m2!1sja!2sjp!4v1761762168045!5m2!1sja!2sjp"
+              style="border: 0"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+            >
+            </iframe>
+            <img
+              src="assets/images/circle-1.svg"
+              alt="円形グラデ"
+              class="circle-svg"
+            />
+          </div>
+          <div class="access-details">
+            <div class="access-address">
+              <p class="access-info-title">住所</p>
+              <div class="access-info-right">
+                <p class="access-info-address">
+                  西風新都こころ<br />
+                  〒731-5109<br />
+                  広島県広島市佐伯区石内北1丁目16-11
+                </p>
+                <p class="access-info-transport">
+                  <i class="fa-solid fa-car"></i>
+                  西風新都IC、五日市ICより車で約10分<br />
+                  <i class="fa-solid fa-bus"></i>
+                  広電バス「こころ南中央」より徒歩4分
+                </p>
+              </div>
+            </div>
+
+            <div class="access-info">
+              <p class="access-info-title">営業日</p>
+              <p class="access-info-text">
+                月〜金&emsp;9:30~14:30（火曜日のみ15:30まで）<br />
+                土日祝&emsp;定休日
+              </p>
+            </div>
+
+            <div class="access-payment">
+              <p class="access-info-title">お支払<br class="brsp" />方法</p>
+              <p class="access-info-text">
+                現金 / クレジットカード決済 / QRコード決済 / 電子マネー決済
+              </p>
+            </div>
+
+            <div class="access-note">
+              <p class="access-info-title">備考</p>
+              <p class="access-text">駐車場あり</p>
+              <p class="access-text">完全予約制</p>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+    <a href="#top" class="page-top-btn">
+      <span class="page-top-arrow"></span>
+    </a>
+    <div id="footer"></div>
+    <!-- AOS -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init({
+        once: true,
+      });
+    </script>
+  </body>
+</html>
