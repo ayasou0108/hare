@@ -179,7 +179,6 @@ h2 {
   scroll-margin-top: 265px;
 }
 
-
 .header__left {
   display: flex;
   gap: 3.8rem;
@@ -288,24 +287,30 @@ h2 {
 }
 
 .mobile__nav {
-  display: none;
   position: fixed;
   top: 0;
   right: 0;
   width: 80vw;
+  height: 100dvh;
+  height: 100svh; /* Safari 古い */
   height: 100vh;
-  background: rgba(255, 255, 255, 0.95);
+  overflow-y: auto; /*メニュー項目が画面より長くなった場合にスクロールできる*/
+  /* background: rgba(255, 255, 255, 0.95); */
+  background-color: var(--primary-white);
   justify-content: space-between;
   align-items: left;
   flex-direction: column;
   z-index: 1001;
+  transform: translateX(100%);
+  /* display: none; */
+  transition: transform 0.3s ease;
 }
 
 .mobile__nav-list {
   display: flex;
   flex-direction: column;
-  gap: 2.8rem;
-  padding: 8rem 0 0 4rem;
+  gap: 2rem;
+  padding: 5rem 0 0 4rem;
 }
 
 .mobile__nav-item {
@@ -345,7 +350,7 @@ h2 {
 }
 
 .mobile__nav-info {
-  padding: 4rem;
+  padding: 2rem;
   font-size: 1.4rem;
 }
 
@@ -370,6 +375,17 @@ h2 {
   background-size: 100% auto, cover;
   background-repeat: no-repeat;
   padding-top: 7rem;
+}
+
+.mobile__overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100svh;
+  background: rgba(0,0,0,0.3);
+  z-index: 999;
+  display: none;
 }
 
 @media (max-width: 1325px) {
@@ -397,7 +413,11 @@ h2 {
 
   .mobile__nav.active {
     display: flex;
+    transform: translateX(0);
   }
+  .mobile__overlay.active {
+  display: block;
+}
 }
 
 /* ===============================
@@ -517,7 +537,7 @@ h2 {
   justify-content: center;
   align-items: center;
   cursor: pointer;
-  z-index: 9999;
+  z-index: 998;
   opacity: 0;
   visibility: hidden;
 }
@@ -552,6 +572,7 @@ h2 {
 
 .page-top-btn:hover {
   background-color: var(--primary-footer-beige);
+  border: 1px solid var(--primary-white);
 }
 .page-top-btn:hover .page-top-arrow::before,
 .page-top-btn:hover .page-top-arrow::after {
@@ -586,8 +607,8 @@ h2 {
     bottom: 16px;
   }
   .footer-nav .nav__sns i {
-  font-size: 26px;
-  width: 26px;
-  height: 26px;
-}
+    font-size: 26px;
+    width: 26px;
+    height: 26px;
+  }
 }

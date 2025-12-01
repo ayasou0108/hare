@@ -28,6 +28,7 @@ function initHeader() {
   const hamburger = document.querySelector(".hamburger");
   const mobileNav = document.querySelector(".mobile__nav");
   const closeButton = document.querySelector(".mobile__close");
+  const mobileOverlay = document.getElementById("mobileOverlay");
 
   if (!hamburger || !mobileNav) return;
 
@@ -36,14 +37,22 @@ function initHeader() {
   -------------------------------- */
   hamburger.addEventListener("click", () => {
     mobileNav.classList.toggle("active");
+    mobileOverlay.classList.add("active");
   });
 
   closeButton?.addEventListener("click", () => {
     mobileNav.classList.remove("active");
+    mobileOverlay.classList.remove("active");
   });
 
   document.querySelectorAll(".mobile__nav-item a").forEach((link) => {
     link.addEventListener("click", () => mobileNav.classList.remove("active"));
+  });
+
+  // 背景オーバーレイクリックで閉じる
+  mobileOverlay.addEventListener("click", () => {
+    mobileNav.classList.remove("active");
+    mobileOverlay.classList.remove("active");
   });
 
   /* -------------------------------
@@ -84,17 +93,17 @@ function initHeader() {
 /* -------------------------------
       ページトップボタンをスクロールしたら表示
   -------------------------------- */
-document.addEventListener("DOMContentLoaded",()=>{
+document.addEventListener("DOMContentLoaded", () => {
   const returnTop = document.querySelector(".page-top-btn");
 
-window.addEventListener("scroll", () => {
-  let scrollY = window.scrollY;
-  if (scrollY > 200) {
-    returnTop.classList.add("active");
-  } else {
-    returnTop.classList.remove("active");
-  }
-});
+  window.addEventListener("scroll", () => {
+    let scrollY = window.scrollY;
+    if (scrollY > 200) {
+      returnTop.classList.add("active");
+    } else {
+      returnTop.classList.remove("active");
+    }
+  });
 });
 
 /* ===============================
