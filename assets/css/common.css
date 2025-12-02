@@ -275,14 +275,15 @@ h2 {
 .hamburger {
   display: none;
   flex-direction: column;
-  gap: 5px;
+  gap: 6px;
   align-items: center;
   cursor: pointer;
 }
 
 .hamburger span {
-  width: 24px;
-  height: 1px;
+  width: 26px;
+  height: 0;
+  border-top: 1.5px solid var(--primary-black);
   background: var(--primary-black);
 }
 
@@ -400,6 +401,9 @@ h2 {
     display: none;
   }
 
+  .header {
+  padding: 0 5vw 0 4vw;
+}
   .header__right {
     display: none;
   }
