@@ -355,8 +355,8 @@ h2 {
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 24px;
-  height: 1px;
+  width: 28px;
+  height: 1.5px;
   background-color: var(--primary-black);
   border-radius: 1px;
   transform-origin: center;
