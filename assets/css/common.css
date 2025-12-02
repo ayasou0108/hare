@@ -275,6 +275,28 @@ h2 {
 .hamburger {
   display: none;
   flex-direction: column;
+  justify-content: space-between;
+  width: 26px;       /* 好きな幅 */
+  height: 18px;      /* 線間の高さを含む */
+  background: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+.hamburger span {
+  display: block;
+  height: 1.5px;
+  width: 100%;
+  line-height: 2px;
+  background-color: var(--primary-black);
+  border-radius: 1px;
+}
+
+
+
+/* .hamburger {
+  display: none;
+  flex-direction: column;
   gap: 6px;
   align-items: center;
   cursor: pointer;
@@ -285,7 +307,7 @@ h2 {
   height: 0;
   border-top: 1.5px solid var(--primary-black);
   background: var(--primary-black);
-}
+} */
 
 .mobile__nav {
   position: fixed;
