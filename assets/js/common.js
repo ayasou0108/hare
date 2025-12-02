@@ -38,11 +38,13 @@ function initHeader() {
   hamburger.addEventListener("click", () => {
     mobileNav.classList.toggle("active");
     mobileOverlay.classList.add("active");
+    document.body.style.overflow = "hidden"; // ← スクロールロック
   });
 
   closeButton?.addEventListener("click", () => {
     mobileNav.classList.remove("active");
     mobileOverlay.classList.remove("active");
+    document.body.style.overflow = ""; // ← ロック解除
   });
 
   document.querySelectorAll(".mobile__nav-item a").forEach((link) => {
@@ -53,6 +55,7 @@ function initHeader() {
   mobileOverlay.addEventListener("click", () => {
     mobileNav.classList.remove("active");
     mobileOverlay.classList.remove("active");
+    document.body.style.overflow = "";
   });
 
   /* -------------------------------

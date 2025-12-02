@@ -291,9 +291,7 @@ h2 {
   top: 0;
   right: 0;
   width: 80vw;
-  height: 100dvh;
-  height: 100svh; /* Safari 古い */
-  height: 100vh;
+  height: 100svh;
   overflow-y: auto; /*メニュー項目が画面より長くなった場合にスクロールできる*/
   /* background: rgba(255, 255, 255, 0.95); */
   background-color: var(--primary-white);
@@ -309,8 +307,8 @@ h2 {
 .mobile__nav-list {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
-  padding: 5rem 0 0 4rem;
+  gap: 2.8rem;
+  padding: 8rem 0 0 4rem;
 }
 
 .mobile__nav-item {
@@ -350,8 +348,8 @@ h2 {
 }
 
 .mobile__nav-info {
-  padding: 2rem;
-  font-size: 1.4rem;
+  padding: 2rem 4rem;
+  font-size: 1.5rem;
 }
 
 .mobile__nav-info li {

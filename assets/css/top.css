@@ -140,7 +140,7 @@
 
   .mv__bg {
     object-fit: cover;
-    object-position: left% bottom;
+    object-position: left bottom;
   }
 
   .mv .circle-svg {
@@ -185,7 +185,8 @@
 .concept-inner {
   display: flex;
   gap: 6vw;
-  padding: 16rem 6rem 18rem 0;
+  /* padding: 16rem 6rem 18rem 0; */
+  padding: 10vh 5vw 12vh 2vw;
   margin: 8rem auto 0;
 }
 
@@ -200,22 +201,22 @@
 .concept__img1 {
   position: absolute;
   top: -6vw;
-  left: var(--contentPadding);
-  width: 15.6vw;
-  min-width: 120px;
-  max-width: 280px;
-  aspect-ratio: 23 / 33;
+  left: 5vw;
+  width: 21vw;
+  min-width: 200px;
+  max-width: 350px;
+  aspect-ratio: 31 / 20;
   z-index: 1;
 }
 
 .concept__img2 {
   position: absolute;
-  top: 7vw;
+  top: 8vw;
   left: 27vw;
-  width: 12.5vw;
-  min-width: 100px;
-  max-width: 220px;
-  aspect-ratio: 19 / 24;
+  width: 16vw;
+  min-width: 150px;
+  max-width: 300px;
+  aspect-ratio: 31 / 20;
   z-index: 1;
 }
 
@@ -236,7 +237,7 @@
 
 .concept__left .circle-svg,
 .concept__right .circle-svg {
-  animation: floating-xy 7.2s ease-in-out infinite alternate-reverse;
+  animation: floating-xy 7s ease-in-out infinite alternate-reverse;
 }
 
 @keyframes floating-xy {
@@ -269,7 +270,7 @@
   transform: translate(-50%, -50%);
   width: 15vw;
   aspect-ratio: 1 / 1;
-  z-index: -1;
+  z-index: 0;
 }
 
 @media (max-width: 768px) {
@@ -279,6 +280,7 @@
     text-align: left;
     padding: 16rem 0 18rem;
   }
+
   .concept__img1 {
     position: absolute;
     top: -230px;
@@ -300,6 +302,7 @@
     width: 26.4vw;
     aspect-ratio: 1 / 1;
   }
+
   .concept__right1,
   .concept__right2 {
     margin-left: var(--contentPadding);
@@ -463,7 +466,6 @@
 
 /* timeline */
 
-
 .timeline {
   position: relative;
   display: flex;
@@ -491,7 +493,6 @@
   color: var(--primary-red);
   margin-right: 0.9rem;
 }
-
 
 /* 線 */
 /* 左線 */
@@ -525,7 +526,6 @@
 .timeline-item:last-child::after {
   display: none;
 }
-
 
 /* ドット */
 .timeline-dot {
@@ -562,17 +562,13 @@
 
 /* timeline-right */
 
-
 .timeline-right {
   display: flex;
 }
 
-
 .timeline-right .timeline-item {
   align-items: center;
 }
-
-
 
 @media (min-width: 1440px) {
 }
@@ -618,8 +614,8 @@
 }
 @media (max-width: 420px) {
   .timeline-right {
-  width: calc(50% - 4rem); 
-}
+    width: calc(50% - 4rem);
+  }
 }
 
 /* ========== concern ========== */
@@ -894,7 +890,7 @@
   .menu-title__sub .brsp {
     display: block;
   }
-    .menu-br.first {
+  .menu-br.first {
     display: block;
   }
 }
@@ -1189,6 +1185,7 @@
 .blog-title {
   font-size: clamp(1.4rem, 2.5vw, 1.8rem);
   line-height: 1.5;
+  line-clamp: 2;
   display: -webkit-box;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
