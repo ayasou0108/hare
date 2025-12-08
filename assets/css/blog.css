@@ -50,7 +50,7 @@
 @media (max-width: 768px) {
   .page-blog .menu-mv {
     padding-top: 1rem;
-    height: 50dvh;
+    height: 50svh;
   }
   .menu-mv__subtitle {
     line-height: 1.5;

@@ -1,0 +1,212 @@
+
+/* ========== common(blog) ========== */
+.menu-mv .title-deco {
+  width: 28rem;
+}
+.title-deco {
+  top: 0;
+}
+
+.reservation {
+  margin-top: 16rem;
+}
+
+.page-blog h3 {
+  color: var(--primary-black);
+}
+
+@media (max-width: 768px) {
+  .menu-mv .title-deco {
+    width: 16rem;
+  }
+}
+/* ========== menu-mv(blog) ========== */
+
+.page-blog .menu-mv {
+  width: 100vw;
+  height: 65svh;
+  padding-top: 4rem;
+  background-color: var(--primary-pink-beige);
+  position: relative;
+}
+
+.menu-mv__subtitle {
+  text-align: center;
+  color: var(--primary-red);
+  font-size: clamp(1.4rem, 2vw, 2rem);
+  font-weight: 500;
+  line-height: 1.9;
+  margin-top: 2rem;
+  position: relative;
+  z-index: 1;
+}
+.page-blog .wave {
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+}
+@media (max-width: 768px) {
+  .page-blog .menu-mv {
+    padding-top: 1rem;
+    height: 50svh;
+  }
+  .menu-mv__subtitle {
+    line-height: 1.5;
+  }
+}
+
+
+
+
+
+
+
+
+
+/* ================================
+   ブログ記事（WordPress → HTML貼付）用スタイル
+   HTML は一切変更なしでOK
+   対象範囲：.entry-content
+================================ */
+
+/* 基本レイアウト */
+.entry-content {
+  max-width: 780px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+}
+
+/* 段落 */
+.entry-content p {
+  margin: 1.6em 0;
+}
+
+/* strong（太字）を少し強調 */
+.entry-content strong {
+  font-weight: 600;
+  color: var(--primary-red);
+}
+
+/* 見出し（WordPress風） */
+.entry-content h2 {
+  font-size: 2rem;
+  margin: 3rem 0 1.5rem;
+  padding-bottom: 0.8rem;
+  border-bottom: 2px solid #e7c6cc;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.entry-content h3 {
+  font-size: 1.8rem;
+  margin: 2.2rem 0 1rem;
+  padding-left: 0.8rem;
+  border-left: 4px solid #e7c6cc;
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+/* リスト */
+.entry-content ul,
+.entry-content ol {
+  margin: 1.4rem 0 1.4rem 1.5rem;
+  padding-left: 0.5rem;
+}
+
+.entry-content li {
+  margin: 0.6rem 0;
+  line-height: 1.8;
+}
+
+/* 画像（中央寄せ＋余白） */
+.entry-content figure {
+  margin: 2rem auto;
+  text-align: center;
+}
+
+.entry-content figure img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 6px;
+}
+
+/* 引用 */
+.entry-content blockquote {
+  margin: 2rem 0;
+  padding: 1.2rem 1.5rem;
+  border-left: 4px solid #e7c6cc;
+  background: #faf5f7;
+  color: #444;
+  border-radius: 4px;
+}
+
+.entry-content blockquote p {
+  margin: 0;
+}
+
+/* 水平線 */
+.entry-content hr {
+  border: none;
+  border-top: 1px solid #e4e4e4;
+  margin: 2.5rem 0;
+}
+
+/* TOC（目次）部分軽く整える） */
+.entry-content .toc {
+  margin: 2rem 0;
+  padding: 1rem 1.2rem;
+  background: #fafafa;
+  border: 1px solid #eee;
+  border-radius: 6px;
+  font-size: 0.95rem;
+}
+
+.entry-content .toc-title {
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.entry-content .toc-list li {
+  margin: 0.4rem 0;
+}
+
+.entry-content .toc a {
+  text-decoration: none;
+  color: #444;
+}
+
+.entry-content .toc a:hover {
+  text-decoration: underline;
+}
+
+/* テーブル（念のため） */
+.entry-content table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.8rem 0;
+}
+
+.entry-content table th,
+.entry-content table td {
+  border: 1px solid #ddd;
+  padding: 0.7rem 1rem;
+}
+
+/* スマホ対応 */
+@media (max-width: 600px) {
+  .entry-content {
+    padding: 1.4rem 1rem;
+    font-size: 0.95rem;
+  }
+
+  .entry-content h2 {
+    font-size: 1.35rem;
+  }
+
+  .entry-content h3 {
+    font-size: 1.15rem;
+  }
+}

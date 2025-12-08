@@ -8,7 +8,7 @@
 .mv {
   position: relative;
   width: 100vw;
-  height: 90dvh;
+  height: 90svh;
 }
 
 .mv__backgrounds {
@@ -26,7 +26,7 @@
   top: 0;
   left: 0;
   width: 100vw;
-  height: 100dvh;
+  height: 100svh;
   object-fit: cover;
   pointer-events: none;
   user-select: none;
@@ -135,7 +135,7 @@
   .mv__backgrounds {
     position: relative;
     width: 100vw;
-    height: 80dvh;
+    height: 80svh;
   }
 
   .mv__bg {
@@ -161,7 +161,7 @@
 
   .mv__inner-top {
     position: absolute;
-    top: 20%;
+    top: 14%;
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
@@ -186,7 +186,7 @@
   display: flex;
   gap: 6vw;
   /* padding: 16rem 6rem 18rem 0; */
-  padding: 10vh 5vw 12vh 2vw;
+  padding: 10svh 5vw 12svh 2vw;
   margin: 8rem auto 0;
 }
 
@@ -1251,6 +1251,7 @@
 .faq-lead {
   width: 100%;
   font-size: clamp(1.2rem, 2vw, 1.6rem);
+  line-height: 1.2;
 }
 .faq-link .brsp {
   display: none;

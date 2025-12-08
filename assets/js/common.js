@@ -58,26 +58,7 @@ function initHeader() {
     document.body.style.overflow = "";
   });
 
-  /* -------------------------------
-      ハンバーガー追従（スマホ）
-  -------------------------------- */
-  // window.addEventListener("scroll", () => {
-  //   if (window.innerWidth > 768) return;
 
-  //   const scrollY = window.scrollY;
-
-  //   if (scrollY > mvHeight) {
-  //     hamburger.style.position = "fixed";
-  //     hamburger.style.top = "15px";
-  //     hamburger.style.right = "0px";
-  //     hamburger.style.transform = "none";
-  //   } else {
-  //     hamburger.style.position = "absolute";
-  //     hamburger.style.top = "50%";
-  //     hamburger.style.right = "0";
-  //     hamburger.style.transform = "translateY(-50%)";
-  //   }
-  // });
 
   /* -------------------------------
       ヘッダーをスクロール追従（PC ＆ SP 共通）
@@ -204,3 +185,12 @@ function drawSine(canvas, t, zoom, delay) {
 }
 
 init();
+
+
+function setVh() {
+  const vh = window.innerHeight * 0.01;
+  document.documentElement.style.setProperty('--vh', `${vh}px`);
+}
+
+setVh();
+window.addEventListener('resize', setVh);
