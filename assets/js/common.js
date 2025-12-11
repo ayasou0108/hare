@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 /* ===============================
-    ヘッダー機能まとめ（最適化版）
+    ヘッダー機能まとめ
 ================================ */
 function initHeader() {
   const header = document.querySelector(".header");
@@ -59,19 +59,6 @@ function initHeader() {
   });
 
 
-
-  /* -------------------------------
-      ヘッダーをスクロール追従（PC ＆ SP 共通）
-  -------------------------------- */
-  window.addEventListener("scroll", () => {
-    if (!header) return;
-
-    if (window.scrollY > mvHeight - 8) {
-      header.classList.add("fixed");
-    } else {
-      header.classList.remove("fixed");
-    }
-  });
 }
 
 /* -------------------------------
@@ -186,11 +173,12 @@ function drawSine(canvas, t, zoom, delay) {
 
 init();
 
+// スマホのアドレスバーによる100vhズレ対策
 
 function setVh() {
   const vh = window.innerHeight * 0.01;
-  document.documentElement.style.setProperty('--vh', `${vh}px`);
+  document.documentElement.style.setProperty("--vh", `${vh}px`);
 }
 
 setVh();
-window.addEventListener('resize', setVh);
+window.addEventListener("resize", setVh);

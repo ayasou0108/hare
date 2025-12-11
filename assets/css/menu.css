@@ -54,8 +54,7 @@
 
 .menu-mv {
   width: 100vw;
-  /* min-height: 100svh; */
-  height: 100svh;
+  height: auto;
   padding-top: 4rem;
   background-color: var(--primary-pink-beige);
   position: relative;
@@ -76,8 +75,7 @@
   display: none;
 }
 .wave {
-  position: absolute;
-  bottom: -2px;
+  margin-top: 3rem;
   left: 0;
   width: 100%;
   overflow: hidden;
@@ -86,7 +84,7 @@
 
 @media (max-width: 768px) {
   .menu-mv {
-    padding-top: 1rem;
+    padding-top: 0rem;
   }
   .menu-mv__subtitle {
     line-height: 1.5;
@@ -254,13 +252,13 @@
     display: none;
   }
   .menu-button__main > a:not(:last-child)::after {
-    top: auto; /* topはリセット */
-    bottom: 0; /* 下に配置 */
-    right: auto; /* rightはリセット */
-    left: 50%; /* 左に配置 */
+    top: auto; 
+    bottom: 0;
+    right: auto;
+    left: 50%;
     transform: translateX(-50%);
-    width: 88%; /* 横線の幅 */
-    height: 1px; /* 線の太さ */
+    width: 88%;
+    height: 1px;
   }
   .menu-button__main > a,
   .menu-button__sub > a {
@@ -408,22 +406,7 @@
   padding-left: 2rem;
 }
 
-/* .menu-item__time span,
-.menu-item__sessions span,
-.menu-item__price span,
-.menu-item__ticket span {
-  font-size: 2rem;
-}
 
-.menu-item__time span:first-of-type,
-.menu-item__sessions span:first-of-type,
-.menu-item__price span:first-of-type,
-.menu-item__ticket span:first-of-type {
-  font-weight: 500;
-}
-.menu-item__price{
-  line-height: 1.5;
-} */
 
 .label {
   font-size: 2rem;

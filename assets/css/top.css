@@ -8,7 +8,8 @@
 .mv {
   position: relative;
   width: 100vw;
-  height: 90svh;
+  height: 92svh;
+  margin-top: 7rem;
 }
 
 .mv__backgrounds {
@@ -36,10 +37,10 @@
 }
 .wave {
   position: absolute;
-  bottom: -2px; /*０にすると細い線が出るので */
+  bottom: -2px;
   left: 0;
   width: 100%;
-  overflow: hidden; /* 万が一SVGがはみ出しても隠す */
+  overflow: hidden;
   line-height: 0;
   z-index: 1;
 }

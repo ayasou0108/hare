@@ -157,18 +157,12 @@ h2 {
   height: 7rem;
   background: var(--primary-white);
   width: 100%;
-  /* max-width: 1440px; */
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 0 3vw;
   z-index: 1000;
   transition: all 0.3s ease;
-  position: relative;
-}
-
-/* 上部固定 */
-.header.fixed {
   position: fixed;
   top: 0;
   left: 0;
@@ -276,8 +270,8 @@ h2 {
   display: none;
   flex-direction: column;
   justify-content: space-between;
-  width: 26px;       /* 好きな幅 */
-  height: 18px;      /* 線間の高さを含む */
+  width: 26px; /* 好きな幅 */
+  height: 18px; /* 線間の高さを含む */
   background: none;
   padding: 0;
   cursor: pointer;
@@ -291,8 +285,6 @@ h2 {
   background-color: var(--primary-black);
   border-radius: 1px;
 }
-
-
 
 /* .hamburger {
   display: none;
@@ -404,7 +396,7 @@ h2 {
   left: 0;
   width: 100vw;
   height: 100svh;
-  background: rgba(0,0,0,0.3);
+  background: rgba(0, 0, 0, 0.3);
   z-index: 999;
   display: none;
 }
@@ -424,8 +416,8 @@ h2 {
   }
 
   .header {
-  padding: 0 5vw 0 4vw;
-}
+    padding: 0 5vw 0 4vw;
+  }
   .header__right {
     display: none;
   }
@@ -440,8 +432,8 @@ h2 {
     transform: translateX(0);
   }
   .mobile__overlay.active {
-  display: block;
-}
+    display: block;
+  }
 }
 
 /* ===============================
