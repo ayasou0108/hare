@@ -71,6 +71,8 @@
   height: 7rem;
   border-radius: 8rem;
   background-color: var(--primary-pink-beige);
+  padding: 0 1rem;
+  text-align: center;
   transition: transform 0.3s;
 }
 

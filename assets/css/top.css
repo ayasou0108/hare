@@ -306,7 +306,10 @@
 
   .concept__right1,
   .concept__right2 {
-    margin-left: var(--contentPadding);
+    margin:0 auto;
+    width: 430px;
+    padding-left: var(--contentPadding);
+    max-width: 100%;
   }
 
   .concept__right .circle-svg {
